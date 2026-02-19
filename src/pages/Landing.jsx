@@ -174,13 +174,7 @@ export default function Landing() {
             <a href="#how-it-works">How It Works</a>
             <a href="#features">Features</a>
             <a href="#ai">AI Verify</a>
-            <button
-              className="btn-nav"
-              style={{ background:'rgba(0,232,198,.12)', color:'var(--accent)', border:'1px solid rgba(0,232,198,.25)', cursor:'pointer', marginRight:'.5rem' }}
-              onClick={() => navigate('/wallet')}
-            >
-              ◎ Wallet
-            </button>
+            <a onClick={() => navigate('/wallet')} style={{ cursor:'pointer' }}>◎ Wallet</a>
             <a href="#login" className="btn-nav">Launch App →</a>
           </div>
           <div style={{ display:'flex', alignItems:'center', gap:'.75rem' }}>
@@ -223,12 +217,7 @@ export default function Landing() {
           <div className="hero-cta">
             <button className="btn-primary" onClick={() => setLoginRole('gov')}>🏛️ Gov Officer Login</button>
             <button className="btn-ghost"   onClick={() => setLoginRole('user')}>🎓 Student Portal</button>
-            <button
-              onClick={() => navigate('/wallet')}
-              style={{ background:'rgba(0,232,198,.12)', color:'#ffffff', border:'1px solid rgba(0,232,198,.4)', borderRadius:'10px', padding:'.65rem 1.4rem', fontSize:'.95rem', fontWeight:600, cursor:'pointer', display:'inline-flex', alignItems:'center', gap:'.4rem', backdropFilter:'blur(8px)' }}
-            >
-              ◎ Algorand Wallet
-            </button>
+            <a onClick={() => navigate('/wallet')} style={{ cursor:'pointer' }}>◎ Wallet</a>
           </div>
           <div className="hero-stats" ref={countersRef}>
             {STATS.map((s, i) => (
