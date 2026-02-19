@@ -831,6 +831,8 @@ img { display:block; max-width:100%; }
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;  /* sits above sparkles canvas (z-index:1 canvas) */
 }
 
 /* ── TOPBAR ── */
@@ -1896,9 +1898,9 @@ button, a, [role="button"] { -webkit-tap-highlight-color: transparent; }
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.6);
+  background: rgba(0,0,0,.55);
   z-index: 199;
-  backdrop-filter: blur(2px);
+  /* no backdrop-filter — avoids blurring page content */
 }
 .sidebar-overlay.visible { display: block; }
 
@@ -2132,4 +2134,9 @@ button, a, [role="button"] { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 768px) {
   html { scroll-behavior: smooth; }
   body { overflow-x: hidden; }
+}
+
+/* Desktop: overlay must NEVER show (sidebar is fixed layout, not overlay) */
+@media (min-width: 1025px) {
+  .sidebar-overlay { display: none !important; }
 }
