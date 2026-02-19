@@ -77,7 +77,7 @@ export default function AIVerify() {
       <nav className="navbar">
         <div className="nav-inner">
           <div className="nav-brand" style={{ cursor:'pointer' }} onClick={() => navigate('/')}>
-            <span className="brand-icon">⬡</span>ExcessScheme
+            <span className="brand-icon">⚡</span>ExpressScheme
           </div>
           <div className="nav-links">
             <span style={{ cursor:'pointer', color:'var(--text-2)' }} onClick={() => navigate('/user-dashboard')}>← Back to Dashboard</span>

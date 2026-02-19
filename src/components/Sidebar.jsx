@@ -7,8 +7,8 @@ export default function Sidebar({ role, tabs, activeTab, onTabChange, open }) {
   return (
     <aside className={`sidebar${open ? '' : ' hidden'}`}>
       <div className="sidebar-brand">
-        <span style={{ color:'var(--accent)' }}>⬡</span>
-        <span>ExcessScheme</span>
+        <span style={{ color:'var(--accent)' }}>⚡</span>
+        <span>ExpressScheme</span>
       </div>
       <div className="sidebar-role-badge">
         <span className={`role-dot ${isGov ? 'gov-dot' : 'user-dot'}`}></span>

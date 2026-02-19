@@ -191,7 +191,7 @@ img { display:block; max-width:100%; }
   line-height: 1.08;
   letter-spacing: -.03em;
   margin-bottom: 1.4rem;
-  color: #fff;
+  color: var(--text);
 }
 .gradient-text {
   background: linear-gradient(135deg, var(--accent) 0%, #00A8FF 100%);
@@ -348,7 +348,7 @@ img { display:block; max-width:100%; }
   font-size: clamp(2rem, 4vw, 2.9rem);
   font-weight: 800;
   letter-spacing: -.03em;
-  color: #fff;
+  color: var(--text);
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -1636,3 +1636,181 @@ img { display:block; max-width:100%; }
   .upload-grid { grid-template-columns:1fr; }
   .ai-how-grid { grid-template-columns:1fr; }
 }
+
+/* ═══════════════════════════════════════════════
+   LIGHT MODE — Fix all hardcoded color:#fff
+═══════════════════════════════════════════════ */
+[data-theme="light"] body { color: var(--text); }
+
+/* Hero & sections */
+[data-theme="light"] .hero-title,
+[data-theme="light"] .section-title          { color: var(--text); }
+
+/* Feature cards */
+[data-theme="light"] .feature-card h3        { color: var(--text); }
+[data-theme="light"] .feature-card p         { color: var(--text-2); }
+
+/* Step cards */
+[data-theme="light"] .step-card h3           { color: var(--text); }
+
+/* Login cards */
+[data-theme="light"] .login-card h3          { color: var(--text); }
+[data-theme="light"] .login-card p           { color: var(--text-2); }
+
+/* Modal */
+[data-theme="light"] .modal-box              { background: #fff; }
+[data-theme="light"] .modal-title            { color: var(--text); }
+
+/* Dashboard welcome */
+[data-theme="light"] .dash-welcome h1        { color: var(--text); }
+
+/* KPI */
+[data-theme="light"] .kpi-val                { color: var(--text); }
+
+/* Scheme card */
+[data-theme="light"] .sc-title               { color: var(--text); }
+
+/* Tab header */
+[data-theme="light"] .tab-header-row h2      { color: var(--text); }
+[data-theme="light"] .tokenize-form-card h3,
+[data-theme="light"] .tokenize-preview h3    { color: var(--text); }
+
+/* Applications */
+[data-theme="light"] .app-name               { color: var(--text); }
+
+/* Flags */
+[data-theme="light"] .flag-title             { color: var(--text); }
+
+/* Reports */
+[data-theme="light"] .rc-title               { color: var(--text); }
+
+/* Timeline */
+[data-theme="light"] .tl-title               { color: var(--text); }
+
+/* Bridge */
+[data-theme="light"] .bridge-info-card h3    { color: var(--text); }
+[data-theme="light"] .bridge-batch-card h3,
+[data-theme="light"] .bridge-distribute-card h3 { color: var(--text); }
+
+/* Verify */
+[data-theme="light"] .verify-steps-card h3,
+[data-theme="light"] .verify-progress-card h3 { color: var(--text); }
+[data-theme="light"] .vstep-title             { color: var(--text); }
+
+/* My applications */
+[data-theme="light"] .mac-scheme              { color: var(--text); }
+[data-theme="light"] .ms-scheme               { color: var(--text); }
+
+/* Gauge */
+[data-theme="light"] .gauge-val               { color: var(--text); }
+
+/* AI Verify page */
+[data-theme="light"] .ai-section-title        { color: var(--text); }
+[data-theme="light"] .uz-title                { color: var(--text); }
+[data-theme="light"] .ae-title                { color: var(--text); }
+[data-theme="light"] .ring-score              { color: var(--text); }
+
+/* Fraud patterns */
+[data-theme="light"] .fraud-patterns-card h3  { color: var(--text); }
+[data-theme="light"] .fp-item                 { background: rgba(0,0,0,.03); border-color: var(--border-2); }
+
+/* AI how grid */
+[data-theme="light"] .ahg-card h4             { color: var(--text); }
+
+/* Chart cards */
+[data-theme="light"] .chart-card,
+[data-theme="light"] .table-card,
+[data-theme="light"] .flag-card,
+[data-theme="light"] .report-card,
+[data-theme="light"] .scheme-card,
+[data-theme="light"] .token-card,
+[data-theme="light"] .my-app-card,
+[data-theme="light"] .ai-engine-card,
+[data-theme="light"] .fraud-patterns-card,
+[data-theme="light"] .ahg-card,
+[data-theme="light"] .step-card               { background: var(--bg-card); }
+
+/* Table text */
+[data-theme="light"] .dash-table td           { color: var(--text-2); }
+[data-theme="light"] .dash-table th           { color: var(--text-3); }
+[data-theme="light"] .dash-table tr:hover td  { background: rgba(0,0,0,.025); }
+
+/* Sidebar */
+[data-theme="light"] .sidebar                 { background: #e8f2ee; border-right-color: var(--border-2); }
+[data-theme="light"] .snav-item               { color: var(--text-2); }
+[data-theme="light"] .snav-item.active        { background: rgba(0,158,136,.1); color: var(--accent); }
+[data-theme="light"] .snav-item:hover         { background: rgba(0,0,0,.04); }
+[data-theme="light"] .sidebar-brand           { color: var(--text); }
+[data-theme="light"] .su-name                 { color: var(--text); }
+
+/* Minted items */
+[data-theme="light"] .minted-item             { background: rgba(0,0,0,.03); }
+[data-theme="light"] .mi-scheme               { color: var(--text); }
+
+/* Token preview */
+[data-theme="light"] .tpc-v                   { color: var(--text); }
+[data-theme="light"] .tpc-v.accent            { color: var(--accent); }
+
+/* Alert items */
+[data-theme="light"] .alert-title             { color: var(--text); }
+
+/* Dist items */
+[data-theme="light"] .dist-item               { background: rgba(0,0,0,.03); }
+
+/* batch info */
+[data-theme="light"] .big-v                   { color: var(--text); }
+
+/* Score bar track */
+[data-theme="light"] .score-bar               { background: rgba(0,0,0,.08); }
+
+/* Hero badge */
+[data-theme="light"] .hero-badge              { background: rgba(0,158,136,.08); }
+
+/* Floating cards in orb */
+[data-theme="light"] .floating-card           { background: #fff; box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+
+/* Scan item styles */
+[data-theme="light"] .scan-item               { background: rgba(0,0,0,.03); }
+[data-theme="light"] .scan-label              { color: var(--text-2); }
+
+/* Section dark overrides */
+[data-theme="light"] .section-dark            { background: #e4f0ec; }
+[data-theme="light"] .ai-hero                 { background: radial-gradient(ellipse at 50% 0%, rgba(0,158,136,.07) 0%, transparent 60%); }
+
+/* Upload zone */
+[data-theme="light"] .upload-zone             { background: var(--bg-card); border-color: var(--border-2); }
+[data-theme="light"] .upload-zone:hover       { background: rgba(0,158,136,.04); }
+
+/* Pipe steps */
+[data-theme="light"] .pipe-step               { background: rgba(0,0,0,.03); }
+[data-theme="light"] .ps-label               { color: var(--text-2); }
+
+/* Progress bar track */
+[data-theme="light"] .ae-progress-bar         { background: rgba(0,0,0,.08); }
+[data-theme="light"] .sc-progress-bar         { background: rgba(0,0,0,.08); }
+
+/* Token card */
+[data-theme="light"] .tc-id                   { color: var(--text-3); }
+[data-theme="light"] .tc-meta                 { color: var(--text-2); }
+
+/* Table card header */
+[data-theme="light"] .table-card-header       { border-bottom-color: var(--border-2); }
+[data-theme="light"] .dash-table td:not(:last-child) { border-bottom-color: rgba(0,0,0,.05); }
+
+/* Footer */
+[data-theme="light"] .footer                  { background: #dceae5; }
+[data-theme="light"] .footer-bottom           { border-top-color: var(--border-2); }
+
+/* Bridge info card */
+[data-theme="light"] .bridge-info-card        { background: var(--bg-card); }
+
+/* Verify result */
+[data-theme="light"] .verify-result.success   { background: rgba(5,150,105,.07); }
+
+/* App row */
+[data-theme="light"] .app-row                 { background: var(--bg-card); }
+[data-theme="light"] .app-scheme              { color: var(--text-2); }
+
+/* Hash display */
+[data-theme="light"] .aer-hash                { background: rgba(0,0,0,.04); border-color: var(--border-2); }
+[data-theme="light"] .tx-hash                 { color: var(--accent); }

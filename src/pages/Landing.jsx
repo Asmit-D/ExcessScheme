@@ -82,8 +82,8 @@ export default function Landing() {
       <nav className="navbar" style={scrolled ? { borderBottomColor:'var(--border)' } : {}}>
         <div className="nav-inner">
           <div className="nav-brand">
-            <span className="brand-icon">⬡</span>
-            ExcessScheme
+            <span className="brand-icon">⚡</span>
+            ExpressScheme
           </div>
           <div className="nav-links">
             <a href="#how-it-works">How It Works</a>
@@ -104,12 +104,10 @@ export default function Landing() {
           </div>
           <h1 className="hero-title">
             Scholarship Funds.<br />
-            <span className="gradient-text">Tokenised. Verified. Distributed.</span>
+            <span className="gradient-text">Tokenised.<br/>Verified.<br/>Distributed.</span>
           </h1>
           <p className="hero-sub">
-            ExcessScheme brings trust, transparency, and speed to government scholarship
-            distribution using on-chain token minting, AI-powered fraud detection, and the
-            bridge student model.
+            Blockchain-powered. AI-verified. Fraud-proof.
           </p>
           <div className="hero-cta">
             <button className="btn-primary" onClick={() => setLoginRole('gov')}>🏛️ Gov Officer Login</button>
@@ -131,8 +129,8 @@ export default function Landing() {
             <div className="orb-ring ring2"></div>
             <div className="orb-ring ring3"></div>
             <div className="orb-core">
-              <span className="orb-icon">⬡</span>
-              <span className="orb-label">SCHEME<br/>TOKEN</span>
+              <span className="orb-icon">⚡</span>
+              <span className="orb-label">EXPRESS<br/>TOKEN</span>
             </div>
             <div className="floating-card fc1"><span className="fc-icon">🔗</span><span>On-Chain</span></div>
             <div className="floating-card fc2"><span className="fc-icon">🤖</span><span>AI Verified</span></div>
@@ -279,7 +277,7 @@ export default function Landing() {
       <footer className="footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="nav-brand brand-name">⬡ ExcessScheme</div>
+            <div className="nav-brand brand-name">⚡ ExpressScheme</div>
             <p>Tokenised government scholarship distribution powered by blockchain and AI.</p>
           </div>
           <div className="footer-links">
@@ -298,7 +296,7 @@ export default function Landing() {
           </div>
         </div>
         <div className="footer-bottom">
-          © 2026 ExcessScheme. Built for Hackathon. All rights reserved.
+          © 2026 ExpressScheme. Built for Hackathon. All rights reserved.
         </div>
       </footer>
 

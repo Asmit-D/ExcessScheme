@@ -22,7 +22,7 @@ export default function LoginModal({ role, onClose }) {
     <div className="modal-overlay open" onClick={e => e.target === e.currentTarget && onClose()}>
       <div className="modal-box">
         <button className="modal-close" onClick={onClose}>✕</button>
-        <div className="modal-logo"><span>⬡</span> ExcessScheme</div>
+        <div className="modal-logo"><span>⚡</span> ExpressScheme</div>
         <div className="modal-title">{title}</div>
         <div className="modal-sub">{sub}</div>
         <form className="modal-form" onSubmit={handleSubmit}>

@@ -105,7 +105,7 @@ export default function GovDashboard() {
         <div className="dash-topbar">
           <div className="topbar-left">
             <button className="sidebar-toggle" onClick={() => setSidebarOpen(o => !o)}>☰</button>
-            <span className="topbar-title">ExcessScheme — Gov Panel</span>
+            <span className="topbar-title">ExpressScheme — Gov Panel</span>
           </div>
           <div className="topbar-right">
             <div className="topbar-search">
