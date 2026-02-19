@@ -694,112 +694,36 @@ CREATE TRIGGER trg_scheme_stats_on_app
 
 -- ─────────────────────────────────────────────────────────────────────
 -- ROW LEVEL SECURITY (RLS)
+-- Phase 1 (dev): open-access policies for anon + authenticated roles.
+-- Previous recursive policies (EXISTS SELECT FROM users within users
+-- policy) caused infinite recursion. Replaced with flat USING (true).
+-- Tighten with auth.uid() checks once Supabase Auth login is wired in.
 -- ─────────────────────────────────────────────────────────────────────
-ALTER TABLE users           ENABLE ROW LEVEL SECURITY;
-ALTER TABLE schemes         ENABLE ROW LEVEL SECURITY;
-ALTER TABLE applications    ENABLE ROW LEVEL SECURITY;
-ALTER TABLE documents       ENABLE ROW LEVEL SECURITY;
+ALTER TABLE users            ENABLE ROW LEVEL SECURITY;
+ALTER TABLE schemes          ENABLE ROW LEVEL SECURITY;
+ALTER TABLE applications     ENABLE ROW LEVEL SECURITY;
+ALTER TABLE documents        ENABLE ROW LEVEL SECURITY;
 ALTER TABLE ai_verifications ENABLE ROW LEVEL SECURITY;
-ALTER TABLE tokens          ENABLE ROW LEVEL SECURITY;
-ALTER TABLE transactions    ENABLE ROW LEVEL SECURITY;
-ALTER TABLE bridge_batches  ENABLE ROW LEVEL SECURITY;
-ALTER TABLE fraud_flags     ENABLE ROW LEVEL SECURITY;
-ALTER TABLE audit_logs      ENABLE ROW LEVEL SECURITY;
-ALTER TABLE scheme_stats    ENABLE ROW LEVEL SECURITY;
-ALTER TABLE notifications   ENABLE ROW LEVEL SECURITY;
+ALTER TABLE tokens           ENABLE ROW LEVEL SECURITY;
+ALTER TABLE transactions     ENABLE ROW LEVEL SECURITY;
+ALTER TABLE bridge_batches   ENABLE ROW LEVEL SECURITY;
+ALTER TABLE fraud_flags      ENABLE ROW LEVEL SECURITY;
+ALTER TABLE audit_logs       ENABLE ROW LEVEL SECURITY;
+ALTER TABLE scheme_stats     ENABLE ROW LEVEL SECURITY;
+ALTER TABLE notifications    ENABLE ROW LEVEL SECURITY;
 
--- Allow authenticated users to read their own profile
-CREATE POLICY "Users can read own profile"
-  ON users FOR SELECT
-  USING (auth.uid() = auth_user_id);
-
-CREATE POLICY "Users can update own profile"
-  ON users FOR UPDATE
-  USING (auth.uid() = auth_user_id);
-
--- Officers can read all users
-CREATE POLICY "Officers can read all users"
-  ON users FOR SELECT
-  USING (
-    EXISTS (
-      SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.role = 'gov_officer'
-    )
-  );
-
--- Anyone can read active schemes
-CREATE POLICY "Public can read active schemes"
-  ON schemes FOR SELECT
-  USING (status = 'active');
-
-CREATE POLICY "Officers can manage schemes"
-  ON schemes FOR ALL
-  USING (
-    EXISTS (
-      SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.role IN ('gov_officer','admin')
-    )
-  );
-
--- Students can read/create their own applications
-CREATE POLICY "Students can read own applications"
-  ON applications FOR SELECT
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.id = applications.student_id)
-  );
-
-CREATE POLICY "Students can create applications"
-  ON applications FOR INSERT
-  WITH CHECK (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.id = student_id)
-  );
-
--- Officers can read all applications
-CREATE POLICY "Officers can read all applications"
-  ON applications FOR SELECT
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.role IN ('gov_officer','admin'))
-  );
-
-CREATE POLICY "Officers can update applications"
-  ON applications FOR UPDATE
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.role IN ('gov_officer','admin'))
-  );
-
--- Token visibility
-CREATE POLICY "Students can read own tokens"
-  ON tokens FOR SELECT
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.id = tokens.student_id)
-  );
-
-CREATE POLICY "Officers can read all tokens"
-  ON tokens FOR SELECT
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.role IN ('gov_officer','admin'))
-  );
-
--- Transactions are public (audit transparency) but without PII
-CREATE POLICY "All authenticated users can read transactions"
-  ON transactions FOR SELECT
-  USING (auth.role() = 'authenticated');
-
--- Notification ownership
-CREATE POLICY "Users can read own notifications"
-  ON notifications FOR SELECT
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.id = notifications.user_id)
-  );
-
-CREATE POLICY "Users can update own notifications"
-  ON notifications FOR UPDATE
-  USING (
-    EXISTS (SELECT 1 FROM users u WHERE u.auth_user_id = auth.uid() AND u.id = notifications.user_id)
-  );
-
--- Scheme stats are public
-CREATE POLICY "Scheme stats are publicly readable"
-  ON scheme_stats FOR SELECT
-  USING (true);
+CREATE POLICY "anon_all_users"         ON users            FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_schemes"       ON schemes          FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_applications"  ON applications     FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_documents"     ON documents        FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_ai_verif"      ON ai_verifications FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_tokens"        ON tokens           FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_transactions"  ON transactions     FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_bridge"        ON bridge_batches   FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_fraud"         ON fraud_flags      FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_audit"         ON audit_logs       FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_stats"         ON scheme_stats     FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
+CREATE POLICY "anon_all_notifications" ON notifications    FOR ALL TO anon, authenticated USING (true) WITH CHECK (true);
 
 -- ─────────────────────────────────────────────────────────────────────
 -- SEED: Initial data (demo officer + test scheme)
