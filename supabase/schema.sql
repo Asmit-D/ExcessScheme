@@ -12,7 +12,7 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 -- ─────────────────────────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS users (
   id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  role            TEXT NOT NULL CHECK (role IN ('student','gov_officer','admin')),
+  role            TEXT NOT NULL DEFAULT 'student' CHECK (role IN ('student','gov_officer','admin')),
 
   -- Personal details
   full_name       TEXT NOT NULL,
@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS schemes (
   max_beneficiaries     INT,
 
   -- Timeline
-  start_date            DATE NOT NULL,
-  end_date              DATE NOT NULL,
-  application_deadline  DATE NOT NULL,
+  start_date            DATE,
+  end_date              DATE,
+  application_deadline  DATE,
 
   -- Blockchain
   token_contract_address TEXT UNIQUE,
@@ -367,7 +367,7 @@ CREATE TABLE IF NOT EXISTS transactions (
   id                UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
 
   -- Blockchain identity
-  tx_hash           TEXT UNIQUE NOT NULL,
+  tx_hash           TEXT UNIQUE NOT NULL DEFAULT 'pending_' || gen_random_uuid()::text,
   block_number      BIGINT,
   block_timestamp   TIMESTAMPTZ,
   chain_id          INT DEFAULT 1,
