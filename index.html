@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SchemeChain — Tokenized Government Scholarships</title>
+  <title>ExcessScheme — Tokenized Government Scholarships</title>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('es-theme')||'dark')</script>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -15,13 +16,14 @@
     <div class="nav-inner">
       <a class="nav-brand" href="index.html">
         <span class="brand-icon">⬡</span>
-        <span class="brand-name">SchemeChain</span>
+        <span class="brand-name">ExcessScheme</span>
       </a>
       <ul class="nav-links">
         <li><a href="#how-it-works">How it Works</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#ai">AI Verify</a></li>
         <li><a href="#login-section" class="btn-nav">Get Started</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme"></button></li>
       </ul>
     </div>
   </nav>
@@ -95,7 +97,7 @@
   <section class="section" id="how-it-works">
     <div class="container">
       <div class="section-label">Process</div>
-      <h2 class="section-title">How SchemeChain Works</h2>
+      <h2 class="section-title">How ExcessScheme Works</h2>
       <p class="section-sub">From government fund allocation to a student's wallet — fully traceable, tamper-proof.</p>
       <div class="steps-flow">
         <div class="step-card">
@@ -239,7 +241,7 @@
     <div class="container">
       <div class="section-label">Access Portal</div>
       <h2 class="section-title">Choose Your Role</h2>
-      <p class="section-sub">Select how you want to access the SchemeChain platform.</p>
+      <p class="section-sub">Select how you want to access the ExcessScheme platform.</p>
       <div class="login-cards">
 
         <!-- GOV card -->
@@ -281,7 +283,7 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="brand-icon">⬡</span>
-        <span class="brand-name">SchemeChain</span>
+        <span class="brand-name">ExcessScheme</span>
         <p>Transparent. Tokenized. Trustworthy.</p>
       </div>
       <div class="footer-links">
@@ -300,7 +302,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 SchemeChain — Hackathon Project</span>
+      <span>© 2026 ExcessScheme — Hackathon Project</span>
     </div>
   </footer>
 
@@ -308,7 +310,7 @@
   <div class="modal-overlay" id="loginModal">
     <div class="modal-box" id="modalBox">
       <button class="modal-close" onclick="closeLogin()">✕</button>
-      <div class="modal-logo"><span class="brand-icon">⬡</span> SchemeChain</div>
+      <div class="modal-logo"><span class="brand-icon">⬡</span> ExcessScheme</div>
       <h2 class="modal-title" id="modalTitle">Sign In</h2>
       <p class="modal-sub" id="modalSub">Government Officer Portal</p>
       <form class="modal-form" onsubmit="handleLogin(event)">
@@ -330,6 +332,7 @@
     </div>
   </div>
 
+  <script src="js/theme.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — AI Verify Page JS
+   ExcessScheme — AI Verify Page JS
 ───────────────────────────────────────────── */
 
 /* ── FILE UPLOAD ── */

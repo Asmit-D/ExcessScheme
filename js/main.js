@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — Landing Page JS (main.js)
+   ExcessScheme — Landing Page JS (main.js)
 ───────────────────────────────────────────── */
 
 /* ── NETWORK CANVAS  ── */
@@ -149,6 +149,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 /* ── NAVBAR SCROLL ── */
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('.navbar');
-  if (nav) nav.style.background = window.scrollY > 30
-    ? 'rgba(5,10,14,.96)' : 'rgba(5,10,14,.82)';
+  if (!nav) return;
+  const light = document.documentElement.getAttribute('data-theme') === 'light';
+  nav.style.background = window.scrollY > 30
+    ? (light ? 'rgba(240,247,245,.98)' : 'rgba(5,10,14,.96)')
+    : (light ? 'rgba(240,247,245,.88)' : 'rgba(5,10,14,.82)');
 });

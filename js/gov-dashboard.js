@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — Government Dashboard JS
+   ExcessScheme — Government Dashboard JS
 ───────────────────────────────────────────── */
 
 /* ── TAB SYSTEM ── */

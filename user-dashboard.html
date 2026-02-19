@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Dashboard — SchemeChain</title>
+  <title>Student Dashboard — ExcessScheme</title>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('es-theme')||'dark')</script>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/dashboard.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -13,7 +14,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
       <span class="brand-icon">⬡</span>
-      <span class="brand-name">SchemeChain</span>
+      <span class="brand-name">ExcessScheme</span>
     </div>
     <div class="sidebar-role-badge">
       <span class="role-dot user-dot"></span>
@@ -62,6 +63,7 @@
           <span class="ai-dot green"></span> AI Verified
         </div>
         <button class="notif-btn">🔔</button>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme"></button>
       </div>
     </header>
 
@@ -263,6 +265,7 @@
     </div>
   </div>
 
+  <script src="js/theme.js"></script>
   <script src="js/dashboard-data.js"></script>
   <script src="js/user-dashboard.js"></script>
 </body>

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — Shared Dashboard Data
+   ExcessScheme — Shared Dashboard Data
 ───────────────────────────────────────────── */
 
 const SCHEMES = [

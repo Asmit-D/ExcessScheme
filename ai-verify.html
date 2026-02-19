@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI Verify — SchemeChain</title>
+  <title>AI Verify — ExcessScheme</title>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('es-theme')||'dark')</script>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/ai.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -14,12 +15,13 @@
     <div class="nav-inner">
       <a class="nav-brand" href="index.html">
         <span class="brand-icon">⬡</span>
-        <span class="brand-name">SchemeChain</span>
+        <span class="brand-name">ExcessScheme</span>
       </a>
       <ul class="nav-links">
         <li><a href="gov-dashboard.html">Gov Portal</a></li>
         <li><a href="user-dashboard.html">Student Portal</a></li>
         <li><a href="ai-verify.html" class="btn-nav">AI Verify</a></li>
+        <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme"></button></li>
       </ul>
     </div>
   </nav>
@@ -212,13 +214,14 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="brand-icon">⬡</span>
-        <span class="brand-name">SchemeChain</span>
+        <span class="brand-name">ExcessScheme</span>
         <p>Transparent. Tokenized. Trustworthy.</p>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 SchemeChain — Hackathon Project</div>
+    <div class="footer-bottom">© 2026 ExcessScheme — Hackathon Project</div>
   </footer>
 
+  <script src="js/theme.js"></script>
   <script src="js/ai-verify.js"></script>
 </body>
 </html>

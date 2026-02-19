@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — Student Dashboard JS
+   ExcessScheme — Student Dashboard JS
 ───────────────────────────────────────────── */
 
 /* ── TAB SYSTEM ── */

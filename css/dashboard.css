@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   SchemeChain — Dashboard CSS
+   ExcessScheme — Dashboard CSS
 ───────────────────────────────────────────── */
 
 /* ── LAYOUT ── */
@@ -20,7 +20,7 @@
   position: fixed;
   top: 0; left: 0; bottom: 0;
   z-index: 200;
-  transition: transform .3s;
+  transition: transform .3s, background .3s;
 }
 .sidebar.hidden { transform: translateX(-100%); }
 
@@ -141,7 +141,7 @@
 /* ── TOPBAR ── */
 .dash-topbar {
   height: 64px;
-  background: rgba(5,10,14,.9);
+  background: var(--navbar-bg);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-2);
   display: flex;
@@ -150,6 +150,7 @@
   padding: 0 2rem;
   position: sticky;
   top: 0; z-index: 100;
+  transition: background .3s;
 }
 .topbar-left { display:flex; align-items:center; gap:1rem; }
 .sidebar-toggle {
@@ -161,7 +162,7 @@
 
 .topbar-right { display:flex; align-items:center; gap:1rem; }
 .topbar-search input {
-  background: rgba(255,255,255,.05);
+  background: var(--input-bg);
   border: 1px solid var(--border-2);
   border-radius: 8px;
   padding: .45rem 1rem;
@@ -330,7 +331,7 @@
   margin-bottom:1.5rem;
 }
 .filter-input {
-  background: rgba(255,255,255,.05);
+  background: var(--input-bg);
   border: 1px solid var(--border-2);
   border-radius: 10px;
   padding: .65rem 1rem;
@@ -652,4 +653,41 @@
   .reports-grid { grid-template-columns:1fr; }
   .app-row { grid-template-columns:1fr 1fr; }
   .my-app-card { grid-template-columns:1fr 1fr; }
+}
+
+/* ── LIGHT MODE DASHBOARD OVERRIDES ── */
+[data-theme="light"] .logout-btn {
+  background: rgba(220,38,38,.07);
+  border-color: rgba(220,38,38,.18);
+}
+[data-theme="light"] .scan-item {
+  background: rgba(0,0,0,.03);
+  border-color: var(--border-2);
+}
+[data-theme="light"] .scan-item.warning {
+  background: rgba(217,119,6,.05);
+}
+[data-theme="light"] .pipe-step {
+  background: rgba(0,0,0,.03);
+}
+[data-theme="light"] .pipe-step.active {
+  background: rgba(0,158,136,.06);
+}
+[data-theme="light"] .pipe-step.done {
+  background: rgba(5,150,105,.05);
+}
+[data-theme="light"] .ai-card {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,158,136,.1);
+}
+[data-theme="light"] .token-preview-card {
+  background: linear-gradient(135deg, rgba(0,158,136,.06) 0%, #fff 100%);
+}
+[data-theme="light"] .kpi-card.kpi-accent {
+  background: rgba(0,158,136,.06);
+  border-color: rgba(0,158,136,.3);
+}
+[data-theme="light"] .kpi-card.kpi-warn {
+  background: rgba(217,119,6,.06);
+  border-color: rgba(217,119,6,.2);
 }
