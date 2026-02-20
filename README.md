@@ -1,231 +1,224 @@
-🚀 ExcessScheme
-Decentralized Tokenized Welfare & Donation Distribution Platform
+# 🚀 ExcessScheme  
+### Decentralized Tokenized Welfare & Donation Distribution Platform  
+**Hackathon Track:** Open Innovation – Algorand  
+**Team Name:** IMAGINARY_CODER  
 
-Built on Algorand Blockchain
-Hackathon Track: Open Innovation – Algorand (PW Hackathon)
-Team: IMAGINARY_CODER
+---
 
-🌍 Problem Statement
+## 🌍 Overview
 
-Government schemes, scholarships, and NGO donations suffer from:
+ExcessScheme is a decentralized mediator platform built on the **Algorand Blockchain** to tokenize, distribute, and track government schemes, scholarships, and NGO donations.
 
-Fund leakage & corruption
+The platform eliminates corruption, reduces fund leakage, prevents ghost beneficiaries, and detects money mule fraud using AI/ML-driven blockchain analysis.
 
-Ghost beneficiaries
+Instead of directly distributing fiat money, funds are converted into blockchain tokens and governed by smart contracts deployed using AlgoKit.
 
-Manual verification delays
+---
 
-Money mule fraud
+## ❗ Problem Statement
 
-Lack of transparency
+Traditional welfare distribution systems suffer from:
 
-Traditional systems rely on centralized databases that are opaque and vulnerable.
+- Fund leakage and corruption  
+- Fake beneficiaries  
+- Lack of transparency  
+- Delayed manual verification  
+- Money mule fraud  
 
-💡 Our Solution – ExcessScheme
+Centralized systems lack accountability and real-time audit capability.
 
-ExcessScheme is a decentralized mediator platform that:
+---
 
-Converts welfare funds into blockchain tokens
+## 💡 Our Solution
 
-Distributes them via smart contracts
+ExcessScheme transforms welfare distribution into a programmable, transparent, and secure blockchain-based system.
 
-Tracks every transaction transparently
+### Core Concept:
+1. Convert scheme funds into Algorand tokens.
+2. Distribute tokens via smart contracts.
+3. Track every transaction transparently.
+4. Detect suspicious fund movement using AI/ML.
 
-Detects money mule fraud using AI/ML
+---
 
-Built entirely on Algorand Blockchain using AlgoKit smart contracts.
+# 🏗️ Architecture
 
-🏗️ Architecture Overview
+The platform operates in two primary layers:
 
-The system operates in two major layers:
+---
 
-🏛️ 1️⃣ Fund Provider Layer
+## 🏛️ 1. Fund Provider Layer  
+(Government / NGOs / Private Organizations)
 
-(Government / NGO / Private Organizations)
+### Step 1: Fund Deposit  
+Organizations deposit scheme funds into the platform.
 
-Step 1 – Fund Deposit
-
-Organizations deposit funds into the platform wallet.
-
-Step 2 – Tokenization
-
-Funds are converted into Algorand Standard Assets (ASA) tokens.
+### Step 2: Tokenization  
+Funds are converted into **Algorand Standard Assets (ASA)**.
 
 Each scheme gets its own token:
+- ScholarshipToken  
+- DonationToken  
+- ReliefToken  
 
-ScholarshipToken
-
-DonationToken
-
-ReliefToken
-
-Step 3 – Smart Contract Logic (AlgoKit)
+### Step 3: Smart Contract Governance (AlgoKit)
 
 Smart contracts define:
 
-Eligibility rules
+- Eligibility rules  
+- Distribution logic  
+- Vesting conditions  
+- Redemption restrictions  
+- Fraud triggers  
 
-Distribution conditions
+All logic is automated and tamper-proof.
 
-Vesting timelines
+---
 
-Redemption controls
+### 🔹 Scholarship Tokenization API (Innovation Module)
 
-Everything is automated and tamper-proof.
+A dedicated API module allows:
 
-🔹 Scholarship Tokenization API (Innovation Block)
+- Dynamic creation of new scheme tokens  
+- Automatic smart contract configuration  
+- Liquidity and redemption control  
+- Secure scheme deployment  
 
-We introduce a dedicated module for:
+This enables scalable welfare tokenization.
 
-Dynamic token creation for new schemes
+---
 
-Automated smart contract deployment
-
-Liquidity control mechanisms
-
-Controlled redemption
-
-This enables programmable welfare infrastructure.
-
-👩‍🎓 2️⃣ Beneficiary Layer
-
+## 👩‍🎓 2. Beneficiary Layer  
 (Schools / Students / Public Users)
 
-Identity Verification
+### Identity Verification
 
 Users register and verify using:
 
-Aadhaar
+- Aadhaar  
+- PAN  
 
-PAN
+After KYC verification, user identity metadata is securely linked to blockchain records.
 
-After KYC (Know Your Customer), identity metadata is securely mapped to blockchain.
+---
 
-Token Distribution
+### Token Distribution
 
-Once verified:
+Once approved:
 
-Tokens are transferred to user wallets
-
-Every transaction is recorded on Algorand
-
-Full transparency is maintained
+- Tokens are transferred to beneficiary wallets  
+- Transactions are recorded immutably on Algorand  
+- Full transparency is maintained  
 
 No manual interference.
 
-🔍 Money Mule Detection (Advanced Innovation)
+---
 
-Fraudsters often collect funds from multiple beneficiaries.
+# 🔍 AI-Based Money Mule Detection
 
-Since Algorand provides a transparent ledger, we:
+Money mule fraud occurs when multiple beneficiaries redirect funds to a single suspicious wallet.
 
-Analyze transaction graphs
+Because Algorand provides a transparent public ledger, our system:
 
-Detect fund clustering
+- Builds transaction graphs  
+- Detects abnormal clustering  
+- Identifies repetitive fund redirection  
+- Flags suspicious wallets  
 
-Identify repeated redirections
+If unusual patterns are detected:
 
-Flag suspicious wallets
+- Tokens can be flagged  
+- Wallet access can be restricted  
+- Alerts are triggered for review  
 
-AI/ML Engine
+This creates proactive fraud prevention.
 
-Our system:
+---
 
-Builds transaction networks
+# ⚙️ Tech Stack
 
-Detects anomaly patterns
+- **Blockchain:** Algorand  
+- **Smart Contracts:** AlgoKit  
+- **Token Standard:** Algorand Standard Assets (ASA)  
+- **Frontend:** React (Vite + React Router)  
+- **Fraud Detection:** AI/ML Transaction Graph Analysis  
 
-Identifies potential mule accounts
+---
 
-If abnormal aggregation is detected:
+# 📁 Project Structure
 
-Tokens can be flagged
 
-Wallets can be restricted
-
-Alerts are triggered
-
-This makes the system fraud-resistant.
-
-⚙️ Tech Stack
-
-Blockchain: Algorand
-
-Smart Contracts: AlgoKit
-
-Token Standard: Algorand Standard Assets (ASA)
-
-Frontend: React (Vite + React Router)
-
-Fraud Detection: AI/ML Transaction Graph Analysis
-
-📁 Project Structure
 ExcessScheme/
 │
-├── src/                 # React source files
-├── dist/                # Production build
-├── css/                 # Styles
-├── js/                  # JS modules
-├── node_modules/        # Dependencies
-├── index.html           # Main entry
-├── package.json         # Project metadata
-├── vite.config.js       # Vite configuration
+├── src/ # React source files
+├── dist/ # Production build
+├── css/ # Styles
+├── js/ # JavaScript modules
+├── node_modules/ # Dependencies
+├── index.html # Entry point
+├── package.json # Project metadata
+├── package-lock.json
+├── vite.config.js # Vite configuration
 └── README.md
-🎯 Key Features
 
-Tokenized scheme distribution
 
-Identity-linked beneficiary wallets
+---
 
-Smart contract–based fund governance
+# ✨ Key Features
 
-Scholarship Tokenization API
+- Tokenized scheme & donation distribution  
+- Identity-linked beneficiary wallets  
+- Smart contract-based governance  
+- Scholarship Tokenization API  
+- Transparent blockchain tracking  
+- AI-powered money mule detection  
+- React-based modern UI  
+- Day/Night theme toggle  
 
-Transparent blockchain tracking
+---
 
-AI-based money mule detection
+# 🔐 Why Algorand?
 
-Day/Night UI theme toggle
+Algorand provides:
 
-React-based modern interface
+- Pure Proof of Stake (PPoS) consensus  
+- Instant transaction finality  
+- Low transaction fees  
+- High scalability  
+- Native asset tokenization (ASA)  
 
-🔐 Why Algorand?
+This makes it ideal for large-scale welfare infrastructure.
 
-We chose Algorand because it offers:
+---
 
-Pure Proof of Stake (PPoS – Pure Proof of Stake)
+# 🌟 Innovation Impact
 
-Instant finality
+ExcessScheme converts:
 
-Low transaction cost
+Manual systems → Automated smart contracts  
+Opaque transactions → Transparent blockchain records  
+Reactive fraud detection → AI-driven prevention  
 
-Native asset tokenization (ASA)
+It builds trust through code, not intermediaries.
 
-High scalability
+---
 
-This makes it ideal for large-scale welfare distribution systems.
+# 🚀 Future Scope
 
-🌟 Innovation Edge
+- DAO-based governance  
+- Zero-knowledge identity integration  
+- National-scale welfare deployment  
+- Real-time audit dashboards  
 
-ExcessScheme transforms welfare systems from:
+---
 
-Manual & opaque → Transparent & programmable
+# 👥 Team
 
-Centralized trust → Code-enforced governance
+**IMAGINARY_CODER**  
+Hackathon Track: Open Innovation – Algorand  
 
-Reactive fraud control → AI-driven proactive detection
+---
 
-🧠 Future Scope
+## 📜 License
 
-DAO-based governance
-
-Zero-knowledge identity integration
-
-National-level scheme deployment
-
-Real-time government audit dashboard
-
-👥 Team
-
-Team Name: IMAGINARY_CODER
-Hackathon Track: Open Innovation (Algorand)
+This project is developed for hackathon and educational purposes.
